@@ -1,0 +1,659 @@
+/* Dark */
+$black: #1d1e24;
+$off-black: #14151a;
+$border-color: #3f4458;
+$title-color: #ced2d9;
+$text-color: #9ba5b5;
+$bg-two-secondary: #212229;
+
+body {
+    background-color: $black;
+}
+
+.body-bg-1 {
+    background-image: linear-gradient(#1f2531 2px, transparent 2px),
+        linear-gradient(90deg, #1f2531 2px, transparent 2px), linear-gradient(#1f2531 1px, transparent 1px),
+        linear-gradient(90deg, #1f2531 1px, transparent 1px) !important;
+    background-size:
+        50px 50px,
+        50px 50px,
+        5px 5px,
+        5px 5px !important;
+    background-position:
+        -2px -2px,
+        -2px -2px,
+        -1px -1px,
+        -1px -1px !important;
+}
+
+.body-bg-2 {
+    background-image: linear-gradient(#1f2531 1px, transparent 1px),
+        linear-gradient(180deg, #1f2531 1px, transparent 1px), linear-gradient(#1f2531 1px, transparent 1px),
+        linear-gradient(180deg, #1f2531 1px, transparent 1px) !important;
+    background-size:
+        5px 5px,
+        5px 5px,
+        5px 5px,
+        5px 5px !important;
+    background-position:
+        -1px -1px,
+        -1px -1px,
+        -1px -1px,
+        -1px -1px !important;
+}
+
+.body-bg-3 {
+    background-color: #181d27 !important;
+    opacity: 1 !important;
+    background-size: 7px 7px !important;
+    background-image: repeating-linear-gradient(45deg, #212735 0, #212735 0.7px, #1a202a 0, #181d27 50%) !important;
+}
+
+.body-bg-4 {
+    background-size: 5px 5px !important;
+    background-image: repeating-linear-gradient(to right, #1f2531, #1f2531 1px, #181d27 1px, #181d27) !important;
+}
+
+.body-bg-5 {
+    background-color: #181d27 !important;
+    background-image: linear-gradient(#1f2531 1px, transparent 1px), linear-gradient(to right, #1f2531 1px, #181d27 1px) !important;
+    background-size: 20px 20px !important;
+}
+
+
+p,
+li,
+a {
+    color: $text-color;
+}
+
+[type="radio"] {
+    &:not(:checked) + label {
+        &:before {
+            background: $black;
+            border-color: $border-color;
+        }
+    }
+    &:checked + label {
+        &:before {
+            background: $black;
+            border-color: $border-color;
+        }
+    }
+}
+
+input,
+textarea,
+.rx-from-control {
+    background-color: $black;
+    border-color: $border-color;
+    color: $text-color;
+}
+
+.form-select {
+    option{
+        color: $text-color;
+    }
+}
+
+a.back-to-top {
+    background-color: $off-black;
+}
+
+.rx-banner {
+    h4 {
+        color: $title-color;
+    }
+    p {
+        color: $text-color;
+    }
+}
+
+.rx-inner-menu-desk {
+    .rx-main-menu {
+        ul {
+            .rx-dropdown {
+                .rx-dropdown-menu {
+                    background-color: $black;
+                    border-color: $border-color;
+                    li {
+                        a {
+                            color: $text-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rx-about-contact {
+    .inner-contact {
+        .rx-about-inner-box {
+            .rx-about-box {
+                background-color: $off-black;
+                border-color: $border-color;
+                h5 {
+                    color: $title-color;
+                }
+                p {
+                    color: $text-color;
+                }
+            }
+        }
+        p {
+            color: $text-color;
+        }
+    }
+}
+
+.rx-services {
+    background-color: $off-black;
+    border-color: $border-color;
+    .services-contact {
+        h5 {
+            color: $title-color;
+        }
+        ul {
+            li {
+                color: $text-color;
+            }
+        }
+    }
+}
+
+.rx-amenities-slider {
+    .owl-dots {
+        background-color: $black;
+        span {
+            border-color: $border-color;
+            &:before {
+                background-color: $black;
+            }
+        }
+    }
+}
+
+.extra-services-contact {
+    border-color: $border-color;
+    &:hover {
+        border-color: #9499ad;
+    }
+    .rx-services-price {
+        p {
+            color: $title-color;
+        }
+        h2 {
+            span {
+                color: $title-color;
+            }
+        }
+    }
+    .rx-services-ico {
+        .ico {
+            background-color: $off-black;
+            border-color: $border-color;
+        }
+    }
+    .rx-services-inner-contact {
+        ul {
+            li {
+                color: $text-color;
+            }
+        }
+    }
+}
+
+.rx-testimonials-contact {
+    .rx-inner-banner {
+        h4 {
+            color: $title-color;
+        }
+        span {
+            color: $text-color;
+        }
+    }
+    .inner-contact {
+        background-color: $off-black;
+        border-color: $border-color;
+    }
+}
+
+.rx-btn-one {
+    background-color: $off-black;
+    border-color: $border-color;
+    color: $title-color;
+}
+
+.rx-btn-two {
+    background-color: $off-black;
+    border-color: $border-color;
+    color: $title-color;
+}
+
+.extra-services-contact {
+    .extra-services-absolute-contact {
+        p {
+            color: #202129;
+        }
+    }
+}
+
+.rx-menu-tabs {
+    ul.nav-tabs {
+        li {
+            button {
+                background-color: $black;
+                border-color: $border-color;
+                color: $title-color;
+            }
+            button.active {
+                background-color: $black;
+            }
+        }
+    }
+}
+
+.rx-menu-tabs-contact {
+    .inner-menu {
+        border-color: $border-color;
+        .sub-contact {
+            h5 {
+                color: $title-color;
+            }
+            p {
+                color: $text-color;
+            }
+        }
+    }
+}
+
+.rx-team-card {
+    .rx-team-contact {
+        h5 {
+            color: $title-color;
+        }
+        p {
+            color: $text-color;
+        }
+    }
+}
+
+.bg-two-secondary {
+    background-color: $bg-two-secondary;
+}
+
+.rx-book-from {
+    .rx-input-box {
+        label {
+            color: $title-color;
+        }
+    }
+}
+
+.rx-booking-last-contact {
+    p {
+        color: $text-color;
+    }
+}
+
+.rx-about-page-contact, .rx-about-contact {
+    .items-details {
+        .rx-dark-img {
+            display: block;
+        }
+        .rx-white-img {
+            display: none;
+        }
+        h5 {
+            color: $title-color;
+        }
+        p {
+            color: $text-color;
+        }
+    }
+}
+
+.rx-contact-form {
+    background-color: $bg-two-secondary;
+    border-color: $border-color;
+    .rx-input-box {
+        label {
+            color: $title-color;
+        }
+    }
+}
+
+.rx-faq {
+    .accordion {
+        .accordion-item {
+            background-color: $off-black;
+            border-color: $border-color;
+            .accordion-button {
+                color: $title-color;
+                background-color: $off-black;
+            }
+            .accordion-collapse {
+                .accordion-body {
+                    border-color: $border-color;
+                }
+            }
+        }
+    }
+}
+
+.rx-spa-card {
+    background-color: $off-black;
+    .spa-contact {
+        span {
+            color: $text-color;
+        }
+        h4 {
+            color: $title-color;
+        }
+        p {
+            color: $text-color;
+        }
+    }
+}
+
+.rx-spa-services {
+    .spa-services-contact {
+        background-color: $off-black;
+        h4 {
+            color: $title-color;
+        }
+        span {
+            color: $text-color;
+        }
+    }
+}
+
+.rx-blog-details {
+    .rx-blog-details-cart {
+        .blog-details-contact {
+            .pagination {
+                ul {
+                    background-color: $off-black;
+                    border-color: $border-color;
+                }
+            }
+            span {
+                color: $text-color;
+            }
+            h4 {
+                a {
+                    color: $title-color;
+                }
+            }
+        }
+    }
+}
+
+.rx-blog-details-sidebar {
+    background-color: $off-black;
+    border-color: $border-color;
+    h5.sub-title {
+        color: $title-color;
+    }
+    .rx-details-categories {
+        .inner-contact {
+            ul {
+                li {
+                    a {
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+    }
+    .rx-recent-post {
+        .recent-inner-post {
+            .recent-post-cart {
+                .post-contact {
+                    span {
+                        color: $text-color;
+                    }
+                    h4 {
+                        a {
+                            color: $title-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .rx-popular-tags {
+        .popular-inner-tags {
+            ul {
+                li {
+                    a {
+                        background-color: $black;
+                        border-color: $border-color;
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modal-content {
+    background-color: $black;
+}
+
+.rx-modal {
+    .sub-title {
+        h4 {
+            color: $title-color;
+        }
+    }
+    .rx-booking-from {
+        .rx-inner-input {
+            label {
+                color: $title-color;
+            }
+            input,
+            .rx-from-control {
+                background-color: $off-black;
+            }
+        }
+    }
+}
+
+.rx-tools-sidebar {
+    background-color: $black;
+    .rx-inner-tools-sidebar {
+        .rx-bar-title {
+            background-color: $black;
+            border-color: $border-color;
+            h6 {
+                color: $title-color;
+            }
+        }
+        .rx-tools-detail {
+            .rx-tools-block {
+                h3 {
+                    color: $title-color;
+                }
+            }
+        }
+    }
+}
+
+.rx-mobile-menu {
+    background-color: $black;
+    .rx-menu-title {
+        .menu_title {
+            color: $title-color;
+        }
+    }
+    .rx-menu-inner {
+        .rx-menu-contact {
+            ul {
+                li {
+                    a {
+                        color: $text-color;
+                        border-color: $border-color;
+                    }
+                    .sub-menu {
+                        li {
+                            a {
+                                color: $text-color;
+                            }
+                        }
+                    }
+                    .menu-toggle {
+                        &:before {
+                            color: $text-color;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rx-rooms-box {
+    .rx-rooms-back-side {
+        &:after{
+            background-color: rgba(20, 21, 26, 0.9);
+        }
+        .inner-back-side {
+            border-color: $border-color;
+            .sub-inner-contact {
+                h5{
+                    color: $title-color;
+                }
+                ul {
+                    li{
+                        color: $text-color;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rx-room-details-sidebar {
+    background-color: $off-black;
+    border-color: $border-color;
+    .sub-title {
+        border-color: $border-color;
+        h4 {
+            color: $title-color;
+        }
+    }
+    .inner-room-details {
+        .rx-room-details-from {
+            label {
+                color: $title-color;
+            }
+        }
+        .rx-side-from {
+            h4 {
+                color: $title-color;
+            }
+            span {
+                color: $text-color;
+            }
+            .form-check {
+                .form-check-label {
+                    color: $text-color;
+                }
+                input {
+                    background-color: $black;
+                    border-color: $border-color;
+                }
+            }
+        }
+    }
+}
+
+.rx-room-details-main-contact {
+    .rx-inner-details {
+        background-color: $off-black;
+        border-color: $border-color;
+        .rx-title {
+            h4 {
+                color: $title-color;
+            }
+        }
+        .rx-details-inner {
+            .inner-room-details {
+                .sub-title {
+                    h4 {
+                        color: $title-color;
+                    }
+                }
+            }
+        }
+    }
+    .rx-main-room {
+        background-color: $off-black;
+        border-color: $border-color;
+    }
+}
+
+.rx-input-box {
+    color: $title-color;
+}
+
+.rx-checkout {
+    .rx-checkout-wrap {
+        background-color: $off-black;
+        border-color: $border-color;
+        .inner-title {
+            h4 {
+                color: $title-color;
+            }
+        }
+        .rx-check-block {
+            h5.rx-check-subtitle {
+                color: $title-color;
+            }
+            .rx-new-option {
+                div {
+                    label {
+                        color: $title-color;
+                    }
+                }
+            }
+        }
+        .rx-check-login-form {
+            .rx-check-login-wrap {
+                label {
+                    color: $title-color;
+                }
+            }
+            .rx-check-login-button {
+                .rx-check-login-fp {
+                    color: $title-color;
+                }
+            }
+        }
+        .rx-billing-details {
+            h5.rx-check-subtitle {
+                color: $title-color;
+            }
+            .rx-new-option {
+                .option-radio {
+                    label {
+                        color: $title-color;
+                    }
+                }
+            }
+            .rx-input-box {
+                label {
+                    color: $title-color;
+                }
+            }
+        }
+    }
+}
+footer {
+    background-color: #14151a;
+}
+.rx-footer-copy {
+    background-color: #1d1e24;
+}

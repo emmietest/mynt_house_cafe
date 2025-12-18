@@ -1,0 +1,178 @@
+/* Room-details */
+.rx-room-details-sidebar {
+    position: sticky;
+    top: 60px;
+    background-color: $bg-two-secondary;
+    border: 1px solid $border-eee;
+    border-radius: $radius-30;
+    .sub-title {
+        padding: 30px;
+        border-bottom: 1px solid $border-eee;
+        h4 {
+            font-size: 20px;
+            font-weight: 600;
+            color: $title-color;
+        }
+    }
+    .inner-room-details {
+        padding: 30px;
+        margin-bottom: -20px;
+        .rx-room-details-from {
+            margin-bottom: 20px;
+            label {
+                font-size: 15px;
+                font-weight: 500;
+                color: $title-color;
+                margin-bottom: 4px;
+            }
+        }
+        .rx-side-from {
+            margin-bottom: 20px;
+            .form-check {
+                margin-bottom: 10px;
+                label {
+                    margin-top: 5px;
+                    font-size: 13px;
+                    font-weight: 400;
+                }
+            }
+            h4 {
+                font-size: 18px;
+                font-weight: 600;
+                color: $title-color;
+                margin-bottom: 12px;
+            }
+            .form-check {
+                display: flex;
+                align-items: center;
+                input {
+                    height: 10px;
+                    width: 10px;
+                    padding: 7px;
+                    box-shadow: none;
+                    cursor: pointer;
+                    &:checked {
+                        background-color: $primary;
+                        border-color: $primary;
+                    }
+                }
+                .form-check-label {
+                    padding-left: 10px;
+                    font-size: 14px;
+                    line-height: 14px;
+                    font-weight: 500;
+                    color: $text-color;
+                    cursor: pointer;
+                }
+            }
+            .rx-side-from-buttons {
+                display: flex;
+            }
+        }
+    }
+}
+
+.rx-room-details-main-contact {
+    .rx-main-room {
+        margin-bottom: 24px;
+        background-color: $bg-two-secondary;
+        border: 1px solid $border-eee;
+        border-radius: $radius-30;
+        .rx-room-details-image {
+            img {
+                width: 100%;
+                border-top-left-radius: $radius-30;
+                border-top-right-radius: $radius-30;
+            }
+        }
+        .room-slider-nav {
+            margin: 24px 12px;
+        }
+        .rx-room-details-inner {
+            margin: 0 12px;
+            img {
+                width: 100%;
+                border-radius: $radius-30;
+            }
+        }
+    }
+    .rx-inner-details {
+        padding: 30px;
+        background-color: $bg-two-secondary;
+        border: 1px solid $border-eee;
+        border-radius: $radius-30;
+        .rx-title {
+            margin-bottom: 24px;
+            h4 {
+                font-size: 20px;
+                font-weight: 600;
+                color: $title-color;
+            }
+        }
+        .inner-text {
+            margin-bottom: 12px;
+            p {
+                font-size: 14px;
+            }
+        }
+        .rx-details-inner {
+            margin-bottom: -24px;
+            .inner-room-details {
+                margin-bottom: 24px;
+                .sub-title {
+                    margin-bottom: 12px;
+                    h4 {
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: $title-color;
+                    }
+                }
+                .rx-cols-room {
+                    ul {
+                        padding-left: 2rem;
+                        list-style-type: disc;
+                        li {
+                            font-size: 14px;
+                        }
+                    }
+                }
+                .rx-inner-review {
+                    .rx-input-box {
+                        margin-bottom: 24px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 575px) {
+    .rx-room-details-sidebar {
+        .sub-title {
+            padding: 20px;
+        }
+        .inner-room-details {
+            padding: 20px;
+        }
+    }
+    .rx-room-details-main-contact {
+        .rx-main-room {
+            .room-slider-nav {
+                margin: 12px 0px;
+            }
+        }
+        .rx-inner-details {
+            padding: 20px;
+            .rx-details-inner {
+                .inner-room-details {
+                    .rx-inner-review {
+                        .rx-input-box {
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

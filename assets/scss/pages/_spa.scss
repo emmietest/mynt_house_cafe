@@ -1,0 +1,124 @@
+/* Spa */
+.rx-spa-card {
+    background-color: $bg-two-secondary;
+    border-radius: $radius-30;
+    &:hover {
+        .spa-img {
+            img {
+                transform: scale(1.2) rotate(4deg);
+            }
+        }
+    }
+    .spa-img {
+        border-top-left-radius: $radius-30;
+        border-top-right-radius: $radius-30;
+        overflow: hidden;
+        img {
+            @include ease3;
+            width: 100%;
+            border-top-left-radius: $radius-30;
+            border-top-right-radius: $radius-30;
+        }
+    }
+    .spa-contact {
+        padding: 20px;
+        span {
+            font-size: 13px;
+            font-weight: 500;
+            color: $text-color;
+        }
+        h4 {
+            margin-bottom: 6px;
+            font-size: 18px;
+            font-weight: 600;
+            color: $title-color;
+        }
+        p {
+            font-size: 13px;
+            line-height: 20px;
+            font-weight: 400;
+            color: $text-color;
+        }
+    }
+}
+
+.rx-spa-services {
+    border-radius: $radius-30;
+    overflow: hidden;
+    .in-p-0 {
+        padding: 0;
+    }
+    .spa-services-img {
+        img {
+            width: 100%;
+        }
+    }
+    .spa-services-contact {
+        padding: 30px;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        background-color: $bg-two-secondary;
+        h4 {
+            margin-bottom: 12px;
+            font-size: 22px;
+            font-weight: 700;
+            color: $title-color;
+        }
+        p {
+            margin-bottom: 8px;
+            font-weight: 300;
+            font-size: 14px;
+        }
+        span {
+            font-size: 15px;
+            font-weight: 500;
+            color: $text-color;
+        }
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 1199px) {
+    .spa-d-none {
+        display: none;
+    }
+    .rx-spa-services {
+        .spa-services-contact {
+            h4 {
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .order-991-2 {
+        order: 2;
+    }
+    .order-991-1 {
+        order: 1;
+    }
+    .spa-d-none {
+        display: flex;
+    }
+    .rx-spa-services {
+        .spa-services-contact{
+            padding: 24px;
+            text-align: left;
+        }
+        .border-tl-radius {
+            img {
+                border-top-right-radius: $radius-30;
+            }
+        }
+        .border-br-radius {
+            img {
+                border-radius: 0;
+            }
+        }
+        .in-p-0 {
+            padding: 0 12px;
+        }
+    }
+}

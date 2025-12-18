@@ -1,0 +1,366 @@
+/* color-1 */
+@import "utilities/_variables";
+
+::selection {
+    color: $color-1;
+}
+
+[type=radio] {
+    &:checked + label {
+        &:after{
+            background: $color-1;
+        }
+    }
+}
+
+.rx-inner-menu-desk {
+    .rx-main-menu {
+        ul {
+            .rx-dropdown {
+                .rx-dropdown-menu {
+                    li {
+                        a {
+                            &:hover {
+                                color: $color-1;
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    a {
+                        color: $color-1;
+                    }
+                }
+            }
+            li {
+                a.nav-link {
+                    &::before {
+                        background: $color-1;
+                    }
+                    &:hover {
+                        color: $color-1;
+                        &::before {
+                            background: $color-1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rx-mobile-menu {
+    .rx-menu-inner {
+        .header-res-social {
+            ul {
+                li {
+                    &:hover {
+                        background-color: $color-1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rx-btn-one {
+    &:hover {
+        background-color: $color-1;
+        border-color: $color-1;
+    }
+}
+
+.rx-btn-two {
+    &:hover {
+        background-color: $color-1;
+        border-color: $color-1;
+    }
+}
+
+.section-hero {
+    .rx-hero-contact {
+        .inner-contact {
+            h2 {
+                span {
+                    color: $color-1;
+                }
+            }
+        }
+    }
+}
+
+.rx-banner {
+    h4 {
+        span {
+            color: $color-1;
+        }
+    }
+}
+
+.rx-services {
+    .services-ico {
+        svg {
+            path {
+                fill: $color-1;
+                stroke: $color-1;
+            }
+        }
+    }
+}
+
+.rx-banner-effects {
+    p {
+        svg {
+            path {
+                fill: $color-1;
+            }
+            .cls-2,
+            .cls-3 {
+                stroke: $color-1;
+            }
+        }
+    }
+}
+
+.rx-faq {
+    .accordion {
+        .accordion-item {
+            .accordion-button {
+                &:not(.collapsed) {
+                    &:after{
+                        color: $color-1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.extra-services-contact {
+    .rx-services-ico {
+        .ico {
+            &:hover {
+                background-color: $color-1;
+            }
+        }
+    }
+    .rx-services-price {
+        h2 {
+            color: $color-1;
+        }
+    }
+}
+
+.rx-blog-card {
+    .rx-blog-contact {
+        h4 {
+            a {
+                &:hover {
+                    color: $color-1;
+                }
+            }
+        }
+    }
+}
+
+.rx-footer-items {
+    .rx-items-contact {
+        ul {
+            li {
+                &:hover {
+                    a {
+                        color: $color-1;
+                    }
+                    &:after {
+                        background-color: $color-1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rx-footer-other-info {
+    .inner-info {
+        a {
+            &:hover {
+                color: $color-1;
+            }
+        }
+    }
+}
+
+.rx-footer-inner-contact {
+    .rx-footer-left-side-contact {
+        p {
+            a {
+                &:hover {
+                    color: $color-1;
+                }
+            }
+        }
+    }
+    .rx-footer-last-logo {
+        .rx-inner-footer-logo {
+            &:hover {
+                border-color: $color-1;
+                i {
+                    color: $color-1;
+                }
+            }
+        }
+    }
+}
+
+a.back-to-top {
+    color: $color-1;
+    border-color: $color-1;
+    svg {
+        path {
+            stroke: $color-1;
+        }
+    }
+}
+
+.rx-menu-tabs {
+    ul.nav-tabs {
+        li {
+            button.active {
+                border-color: $color-1;
+                color: $color-1;
+            }
+            button {
+                &:hover{
+                    border-color: $color-1;
+                    color: $color-1;
+                }
+            }
+        }
+    }
+}
+
+.rx-menu-tabs-contact {
+    .active-menu {
+        border-color: $color-1 !important;
+    }
+    .inner-menu {
+        &:hover{
+            border-color: $color-1;
+        }
+        .sub-prices {
+            h4 {
+                color: $color-1;
+            }
+        }
+    }
+}
+
+.rx-team-card {
+    .rx-team-img {
+        .rx-team-social-media {
+            .social-media-item {
+                &:hover {
+                    border-color: $color-1;
+                    i {
+                        color: $color-1;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rx-breadcrumb-image {
+    .inner-breadcrumb-contact {
+        .rx-banner-breadcrumb {
+            .breadcrumb-contact {
+                .last-contact {
+                    ul {
+                        li {
+                            a {
+                                &:hover {
+                                    color: $color-1;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.rx-blog-details-sidebar {
+    .rx-popular-tags {
+        .popular-inner-tags {
+            ul {
+                li {
+                    a {
+                        &:hover {
+                            background-color: $color-1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .rx-details-categories {
+        .inner-contact {
+            ul {
+                li {
+                    a{
+                        &:hover {
+                            color: $color-1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .rx-recent-post {
+        .recent-inner-post {
+            .recent-post-cart {
+                .post-contact {
+                    h4 {
+                        a {
+                            &:hover {
+                                color: $color-1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.rx-blog-details {
+    .rx-blog-details-cart {
+        .blog-details-contact {
+            .pagination {
+                ul {
+                    li {
+                        a {
+                            &:hover {
+                                color: $color-1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.rx-room-details-sidebar {
+    .inner-room-details {
+        .rx-side-from {
+            .form-check {
+                input {
+                    &:checked{
+                        background-color: $color-1;
+                        border-color: $color-1;
+                    }
+                }
+            }
+        }
+    }
+}

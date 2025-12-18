@@ -1,0 +1,92 @@
+/*-----------------------------------------------------------------------------------
+
+Item Name: The Royalx - Luxury Hotel & Restaurant HTML Template.
+Author: Maraviya Infotech
+Version: 1.1
+Copyright 2024
+
+-----------------------------------------------------------------------------------*/
+
+/*---------------------------------------------------------------------------------
+    Included CSS INDEX
+-----------------------------------------------------------------------------------
+
+01. Typography
+
+02. Utilities
+    - mixing
+    - variables
+
+03. components
+    - header
+    - footer
+    - common
+    - modal
+
+04. Layouts
+    - hero
+    - extra-services
+    - testimonials
+    - menu
+    - Book
+
+05. pages
+    - about
+    - services
+    - rooms
+    - rooms-2
+    - rooms-3
+    - amenities
+    - blog
+    - team
+    - gallery
+    - gallery-2
+    - contact
+    - faq
+    - blog-details
+    - Spa
+    - checkout
+    - authentication
+
+-----------------------------------------------------------------------------------*/
+
+/* Typography ( Import Typography ) */
+@import "base/_typography";
+
+/* Utilities ( Import Utilities ) */
+@import "utilities/_mixing";
+@import "utilities/_variables";
+
+/* components ( Import components ) */
+@import "components/_common";
+@import "components/_header";
+@import "components/_footer";
+@import "components/_modal";
+@import "components/_tools-sidebar";
+
+/* Layouts ( Import Layouts ) */
+@import "layouts/_hero";
+@import "layouts/_extra-services";
+@import "layouts/_testimonials";
+@import "layouts/_menu";
+@import "layouts/_book";
+
+/* Pages ( Import Pages ) */
+@import "pages/_about";
+@import "pages/_services";
+@import "pages/_rooms";
+@import "pages/_rooms-2";
+@import "pages/_rooms-3";
+@import "pages/_room-details";
+@import "pages/_amenities";
+@import "pages/_blog";
+@import "pages/_team";
+@import "pages/_gallery";
+@import "pages/_gallery-2";
+@import "pages/_contact";
+@import "pages/_faq";
+@import "pages/_blog-details";
+@import "pages/_spa";
+@import "pages/_checkout";
+@import "pages/_auth";
+

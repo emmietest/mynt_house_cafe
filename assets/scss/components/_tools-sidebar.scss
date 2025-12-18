@@ -1,0 +1,210 @@
+/* tools-sidebar */
+.rx-tools-sidebar-overlay {
+	display: none;
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: $black-08;
+	z-index: 41;
+}
+
+.rx-tools-sidebar {
+	width: 300px;
+	height: 100vh;
+	position: fixed;
+	right: 0;
+	top: 0;
+	background-color: $bg-fff;
+	transition: all 0.3s ease;
+	z-index: 42;
+	transform: translateX(300px);
+	.rx-tools-sidebar-toggle {
+		position: absolute;
+		top: 45%;
+		right: 302px;
+		width: 40px;
+		height: 40px;
+		background-color: $black-08;
+		transition: all ease-in 0.3s;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 25px;
+		z-index: -1;
+		text-decoration: none;
+		border-radius: $radius-5;
+		i {
+			font-size: 20px;
+			color: $text-fff;
+		}
+	}
+	.rx-inner-tools-sidebar {
+		@include scrollbar;
+		height: 100%;
+		overflow: auto;
+		.rx-bar-title {
+			margin-bottom: 15px;
+			padding: 15px;
+			position: sticky;
+			top: 0;
+			z-index: 5;
+			background-color: $bg-fff;
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: center;
+			border-bottom: 1px solid $border-eee;
+			h6 {
+				margin: 0;
+				font-size: 17px;
+				font-weight: 700;
+				color: $text-000;
+			}
+			.close-tools {
+				color: $close-color;
+				font-size: 17px;
+			}
+		}
+		.rx-tools-detail {
+			padding: 0 15px 15px 15px;
+			.rx-tools-block {
+				h3 {
+					margin: 15px 0;
+					font-size: 14px;
+					font-weight: 500;
+					color: $title-color;
+				}
+				p {
+					margin: 0;
+					text-transform: capitalize;
+				}
+				.rx-color {
+					margin: 0;
+					padding: 0;
+					li {
+						display: inline-block;
+						height: 35px;
+						width: 35px;
+						margin: 6px;
+						border-radius: $radius-5;
+						cursor: pointer;
+						vertical-align: middle;
+						position: relative;
+					}
+				}
+				.rx-tools-rtl,
+				.rx-tools-dark,
+				.rx-tools-skin,
+				.rx-tools-box,
+				.rx-tools-bg {
+					display: flex;
+					flex-wrap: wrap;
+					flex-direction: row;
+					justify-content: space-between;
+					.rx-tools-item {
+						width: 125px;
+						margin-bottom: 10px;
+						text-align: center;
+						img {
+							width: 100%;
+							padding: 5px;
+							border-radius: $radius-10;
+							border: 1px solid $border-eee;
+							&:hover {
+								border: 1px solid $primary;
+							}
+						}
+					}
+					.active-mode,
+					.active-dark-mode,
+					.active-skin,
+					.active-box,
+					.active-bg {
+						position: relative;
+						&:after {
+							content: "\EB79";
+							width: 30px;
+							height: 30px;
+							font-size: 16px;
+							font-family: $remixico !important;
+							position: absolute;
+							top: 10px;
+							right: 10px;
+							border-radius: $radius-10;
+							background-color: $bg-000;
+							color: $text-fff;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+						}
+						img {
+							border-color: $primary;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.active-color {
+	position: relative;
+	&:after {
+		font-family: $remixico !important;
+		content: "\EB79";
+		height: 35px;
+		width: 35px;
+		font-size: 18px;
+		position: absolute;
+		color: $text-fff;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+}
+
+.color-primary {
+	background: $primary;
+}
+
+.color-1 {
+	background: $color-1;
+}
+
+.color-2 {
+	background: $color-2;
+}
+
+.color-3 {
+	background: $color-3;
+}
+
+.color-4 {
+	background: $color-4;
+}
+
+.color-5 {
+	background: $color-5;
+}
+
+.color-6 {
+	background: $color-6;
+}
+
+.color-7 {
+	background: $color-7;
+}
+
+.color-8 {
+	background: $color-8;
+}
+
+.color-9 {
+	background: $color-9;
+}
+
+.open-tools {
+	transform: translateX(0);
+}

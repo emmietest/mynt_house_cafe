@@ -1,0 +1,32 @@
+/* Book */
+.rx-book-from {
+    margin-bottom: 30px;
+    .rx-input-box {
+        label {
+            margin-bottom: 8px;
+            font-family: $text-font-family;
+            font-size: 14px;
+            font-weight: 500;
+            color: $text-color;
+        }
+        .rx-from-control {
+            border-radius: $radius-30;
+        }
+    }
+}
+
+.rx-booking-last-contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    p {
+        margin-bottom: 30px;
+        font-size: 14px;
+        font-weight: 500;
+        color: $text-color;
+    }
+    .booking-button {
+        display: flex;
+    }
+}

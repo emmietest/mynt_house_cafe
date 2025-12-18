@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MYNT HOUSE CAFE.">
+    <meta name="keywords"
+        content="mynt HOUSE CAFE, mynt HOUSE, CAFE, mynt, HOUSE, cafe, restaurant, hotel, resort, booking, travel, tour, holiday">
+    <title>MYNT HOUSE CAFE</title>
+
+    <!-- site Favicon -->
+    <link rel="icon" href="assets/img/favicon/favicon.png" type="image/x-icon">
+
+    <!-- Css All Plugins Files -->
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/remixicon.css">
+    <link rel="stylesheet" href="assets/css/vendor/aos.css">
+    <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/jquery-ui.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/slick.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/swiper-bundle.min.css">
+
+    <!-- Main Style -->
+    <link rel="stylesheet" href="assets/css/demo-2.css">
+
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Note: Replace the placeholders below with your EmailJS credentials:
+    // - YOUR_EMAILJS_USER_ID
+    // - YOUR_SERVICE_ID
+    // - YOUR_TEMPLATE_ID
+    // Create an EmailJS account at https://www.emailjs.com/ and add a service + template.
+
+    if (window.emailjs && typeof emailjs.init === 'function') {
+        // Initialize if the SDK is already loaded. Replace with your EmailJS user ID.
+        try { emailjs.init('hTk0sz3NNuAhnT_9k'); } catch (e) { /* ignore */ }
+    } else {
+        console.warn('EmailJS SDK not detected. Add the CDN <script> tag before main.js.');
+    }
+
+    const form = document.getElementById('eventBookingForm');
+    if (!form) return;
+
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const nameEl = document.getElementById('name');
+    const phoneEl = document.getElementById('phone');
+    const dateEl = document.getElementById('date');
+
+    // Helper function to display inline error
+    function showError(field, message) {
+        const errId = field.id + '-error';
+        let errEl = document.getElementById(errId);
+        if (!errEl) {
+            errEl = document.createElement('span');
+            errEl.id = errId;
+            errEl.style.color = '#ff6b6b';
+            errEl.style.fontSize = '12px';
+            errEl.style.marginTop = '4px';
+            errEl.style.display = 'block';
+            field.parentNode.appendChild(errEl);
+        }
+        errEl.textContent = message;
+        errEl.style.display = 'block';
+        field.style.borderColor = '#ff6b6b';
+    }
+
+    function clearError(field) {
+        const errId = field.id + '-error';
+        const errEl = document.getElementById(errId);
+        if (errEl) errEl.style.display = 'none';
+        field.style.borderColor = '';
+    }
+
+    // Clear errors on input
+    [nameEl, phoneEl, dateEl].forEach(field => {
+        field.addEventListener('input', function () {
+            clearError(this);
+        });
+    });
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        let hasError = false;
+
+        const name = nameEl.value.trim();
+        const phone = phoneEl.value.trim();
+        const date = dateEl.value.trim();
+        const guests = document.getElementById('guests').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name) {
+            showError(nameEl, 'Name is required.');
+            hasError = true;
+        } else {
+            clearError(nameEl);
+        }
+
+        if (!phone) {
+            showError(phoneEl, 'Phone is required.');
+            hasError = true;
+        } else {
+            clearError(phoneEl);
+        }
+
+        if (!date) {
+            showError(dateEl, 'Date is required.');
+            hasError = true;
+        } else {
+            clearError(dateEl);
+        }
+
+        if (hasError) return;
+
+        const templateParams = {
+            to_email: 'mynthousecafe@gmail.com',
+            name: name,
+            phone: phone,
+            guests: guests || 'N/A',
+            date: date,
+            message: message || 'N/A'
+        };
+
+        if (submitBtn) submitBtn.disabled = true;
+
+        if (!window.emailjs || typeof emailjs.send !== 'function') {
+            showError(nameEl, 'Email service not available. Please try again.');
+            if (submitBtn) submitBtn.disabled = false;
+            return;
+        }
+
+        // Send using EmailJS (client-side).
+        emailjs.send('service_ewrsbmy', 'template_4vqdcgd', templateParams)
+            .then(function (response) {
+                const successEl = document.getElementById('formSuccess');
+                if (successEl) successEl.style.display = 'block';
+                [nameEl, phoneEl, dateEl].forEach(field => clearError(field));
+                form.reset();
+            }, function (error) {
+                showError(nameEl, 'Error sending booking. Please try again later.');
+                console.error('EmailJS error:', error);
+            })
+            .finally(function () {
+                if (submitBtn) submitBtn.disabled = false;
+            });
+    });
+});
+</script>
+
+
+<body>
+
+    <!-- Loader -->
+    <div class="rx-loader">
+        <span class="loader"></span>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="rx-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="rx-inner-menu-desk">
+                            <a href="index.html" class="rx-header-btn">
+                                <img src="assets/img/logo/mynt-house-logo.svg" alt="logo">
+                            </a>
+                            <button class="navbar-toggler shadow-none rx-toggle-menu" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                                aria-controls="navbarSupportedContent" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <i class="ri-menu-2-line"></i>
+                            </button>
+                            <div class="rx-main-menu" id="navbarSupportedContent">
+                                <ul class="navbar-nav">
+                                    <!-- <li class="nav-item rx-dropdown">
+                                        <a class="nav-link rx-dropdown-item" href="javascript:void(0)">Home</a>
+                                    </li> -->
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="our-story.html">About</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="our-menu.html">Menu</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="history.html">Discover Morocco</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="contact.html">Contact</a>
+                                    </li>
+                                </ul>
+                                <div class="header-button">
+                                    <a target="_blank"
+                                        href="https://www.toasttab.com/local/order/mynt-house-118-s-main-street"
+                                        class="rx-btn-one">Order Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 d-none d-md-block">
+                    <img class="p-0 m-0" src="assets/img/banner/small-banner1.png" width="100%" alt="banner">
+                </div>
+                <div class="col-12 d-block d-md-none ">
+                    <img class="p-0 m-0" src="assets/img/banner/small-banner.png" width="100%" alt="banner">
+                </div>
+            </div>
+        </div>
+
+        <div class="rx-mobile-menu-overlay"></div>
+        <div id="rx-mobile-menu" class="rx-mobile-menu">
+            <div class="rx-menu-title align-items-center justify-content-between">
+                <img src="assets/img/logo/mynt-house-logo.svg" width="80" alt="Mynt House Cafe logo">
+                <button type="button" class="rx-close-menu">×</button>
+            </div>
+            <div class="rx-menu-inner">
+                <div class="rx-menu-contact">
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="our-story.html">About</a>
+                        </li>
+                        <li>
+                            <a href="our-menu.html">Menu</a>
+                        </li>
+                        <li>
+                            <a href="history.html">Discover Morocco</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="header-button text-center m-4 py-4">
+                    <a target="_blank" href="https://www.toasttab.com/local/order/mynt-house-118-s-main-street"
+                        class="rx-btn-one">Order
+                        Now</a>
+                </div>
+                <div class="header-res-lan-curr">
+                    <!-- Social Start -->
+                    <div class="header-res-social">
+                        <div class="header-top-social">
+                            <ul class="mb-0">
+                                <li class="list-inline-item" style="background-color: #00528f;">
+                                    <a href="https://web.facebook.com/profile.php?id=61569794795201"><i
+                                            class="ri-facebook-fill"></i></a>
+                                </li>
+
+                                <li class="list-inline-item" style="background-color: #00528f;">
+                                    <a href="https://www.instagram.com/mynthousecafe/?hl=en"><i
+                                            class="ri-instagram-line"></i></a>
+                                </li>
+                                <li class="list-inline-item" style="background-color: #00528f;">
+                                    <a href="javascript:void(0)"><i class="ri-linkedin-fill"></i></a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Social End -->
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <!-- Hero -->
+    <section class="section-hero margin-b-50">
+        <div class="container-fulid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="rx-slider">
+                        <div class="rx-slide slide-1">
+                            <div class="rx-hero-contact">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="inner-contact slider-animation">
+                                                <h2 class="d-md-block d-none">Step Into Morocco<br> Right Here in
+                                                    Ann
+                                                    Arbor
+                                                </h2>
+
+                                                <p class="d-md-none d-block">Step Into Morocco</p>
+                                                <h2 class="d-md-none d-block">Here in Ann Arbor</h2>
+                                                <p class="mb-4 d-md-block d-none">Experience the aromas, colors, and
+                                                    hospitality of
+                                                    Morocco in every
+                                                    sip, every bite, every smile.</p>
+                                                <p class="d-md-none d-block mb-4">Taste the colors and warmth of Morocco
+                                                    in every sip and bite.</p>
+                                                <div class="booking-now">
+                                                    <div class="header-button">
+                                                        <a target="_blank"
+                                                            href="https://www.toasttab.com/local/order/mynt-house-118-s-main-street"
+                                                            style="background-color: #14876f; color: #fff; border: none;"
+                                                            class="rx-btn-one">Order Now</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rx-slide slide-2">
+                            <div class="rx-hero-contact">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="inner-contact slider-animation">
+                                                <h2 class="d-md-block d-none">Savor the Flavors <br>Share the Moment.
+                                                </h2>
+                                                <p class="mb-4 d-md-block d-none">Enjoy handcrafted Moroccan tea, fresh
+                                                    pastries, and
+                                                    savory tagines — all served in an atmosphere made for connection.
+                                                </p>
+                                                <p class="d-md-none d-block">Savor the Flavors</p>
+                                                <h2 class="d-md-none d-block">Share the Moment.</h2>
+                                                <p class="d-md-none d-block mb-4">Authentic Moroccan food and tea, right
+                                                    here
+                                                    in the heart of Ann Arbor.</p>
+                                                <div class="booking-now">
+                                                    <div class="header-button">
+
+                                                        <a target="_blank"
+                                                            href="https://www.toasttab.com/local/order/mynt-house-118-s-main-street"
+                                                            style="background-color: #14876f; color: #fff; border: none;"
+                                                            class="rx-btn-one">Order Now</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rx-slide slide-3">
+                            <div class="rx-hero-contact">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="inner-contact slider-animation">
+                                                <h2 class="d-md-block d-none">Good Food Great Tea <br> Even Better
+                                                    Company.
+                                                </h2>
+                                                <p class="d-md-none d-block">Good Food Great Tea</p>
+                                                <h2 class="d-md-none d-block">Better Company.</h2>
+                                                <p class="mb-4">Join our community of tea lovers and foodies.
+                                                    in your favorite spot!</p>
+
+                                                <div class="booking-now">
+                                                    <div class="header-button">
+                                                        <a target="_blank"
+                                                            href="https://www.toasttab.com/local/order/mynt-house-118-s-main-street"
+                                                            style="background-color: #14876f; color: #fff; border: none;"
+                                                            class="rx-btn-one">Order Now</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section-about padding-tb-50">
+        <div class="container">
+            <div class="row mb-minus-24">
+                <div class="col-lg-6 col-12 mb-24" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="rx-about-img">
+                        <img src="assets/img/about/about-image.png" alt="about" class="rx-white-img">
+                        <div class="rx-rounded-circle">
+                            <a href="our-story.html">
+                                <svg viewBox="0 0 100 100" width="100" height="100">
+                                    <defs>
+                                        <path id="circle" d=" M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0">
+                                        </path>
+                                    </defs>
+                                    <text>
+                                        <textPath xlink:href="#circle">
+                                            About Us - About Us - About -
+                                        </textPath>
+                                    </text>
+                                </svg>
+                                <div class="inner-contact">
+                                    <i class="ri-arrow-right-up-line"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 mb-24" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="rx-about-contact text-center text-md-start">
+                        <div class="rx-banner ">
+                            <h4><span>Welcome to Mynt House Café </span></h4>
+                        </div>
+                        <div class="inner-contact">
+                            <p>Discover the spirit of Morocco in the heart of Ann Arbor. <br>
+                                At Mynt House, every cup and every dish celebrates connection — steeped in centuries-old
+                                tradition and flavored with
+                                North African charm.
+                                Join us for a moment of calm, community, and unforgettable taste.</p>
+                        </div>
+                        <div class="booking-now mt-4">
+                            <div class="header-button">
+                                <a href="our-story.html" style="background-color: #14876f; color: #fff; border: none;"
+                                    class="rx-btn-one">Learn
+                                    More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section class="section-room padding-t-50 padding-b-100">
+        <div class="container">
+            <div class="row mb-minus-24">
+                <div class="col-12" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="rx-banner text-center rx-banner-effects">
+                        <p><img src="assets/img/banner/left-shape.svg" alt="banner-left-shape"
+                                class="svg-img left-side">Order Now<img src="assets/img/banner/right-shape.svg"
+                                alt="banner-right-shape" class="svg-img right-side"></p>
+                        <h4> <span>Our Menu</span></h4>
+                        <div class="col-8 text-center mx-auto mb-4 mt-2">
+                            <p>From sunrise breakfasts to evening tea, our kitchen serves authentic Moroccan comfort on
+                                every plate. <br>
+                                Explore our signature selections below — or view the full menu to discover more.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 mb-24" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="rx-rooms-main-box">
+                        <div class="rooms-box-front">
+                            <img src="assets/img/rooms/Card-5-Brevarages.png" alt="room-1">
+                            <div class="content-wrap">
+                                <div class="inner-contact">
+                                    <h4>Beverages</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rooms-box-back">
+                            <img src="assets/img/rooms/Card-5-Brevarages.png" alt="rooms-1">
+                            <div class="content-wrap">
+                                <div class="box-overlay"></div>
+                                <div class="inner-back-side">
+                                    <div class="sub-inner-contact px-4">
+                                        <h5>Beverages</h5>
+                                        <p style="color: #14876f;">Traditional mint tea, spiced lattes & fresh juices
+                                        </p>
+                                    </div>
+                                    <div class="header-button text-center m-4 ">
+                                        <a href="our-menu.html" class="rx-btn-one">Order Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 mb-24" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="rx-rooms-main-box">
+                        <div class="rooms-box-front">
+                            <img src="assets/img/rooms/Card-3-breakfast.png" alt="room-1">
+                            <div class="content-wrap">
+                                <div class="inner-contact">
+                                    <h4>Breakfast</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rooms-box-back">
+                            <img src="assets/img/rooms/Card-3-breakfast.png" alt="rooms-1">
+                            <div class="content-wrap">
+                                <div class="box-overlay"></div>
+                                <div class="inner-back-side">
+                                    <div class="sub-inner-contact px-4">
+                                        <h5>Breakfast</h5>
+                                        <p style="color: #14876f;">Flaky msemmen/bastila, honey & herb omelets</p>
+                                    </div>
+                                    <div class="header-button text-center m-4 ">
+                                        <a href="our-menu.html" class="rx-btn-one">Order Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 mb-24" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="rx-rooms-main-box">
+                        <div class="rooms-box-front">
+                            <img src="assets/img/rooms/Card-4-lunch.png" alt="room-1">
+                            <div class="content-wrap">
+                                <div class="inner-contact">
+                                    <h4>Lunch</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rooms-box-back">
+                            <img src="assets/img/rooms/Card-4-lunch.png" alt="rooms-1">
+                            <div class="content-wrap">
+                                <div class="box-overlay"></div>
+                                <div class="inner-back-side">
+                                    <div class="sub-inner-contact px-4">
+                                        <h5>Lunch</h5>
+                                        <p style="color: #14876f;">Tagine wraps, couscous bowls & garden salads</p>
+                                    </div>
+                                    <div class="header-button text-center m-4 ">
+                                        <a href="our-menu.html" class="rx-btn-one">Order Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-none d-lg-block col-lg-2"></div>
+                <div class="col-lg-4 col-sm-6 col-12 mb-24" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="rx-rooms-main-box">
+                        <div class="rooms-box-front">
+                            <img src="assets/img/rooms/Card-1-Moroccan-Specials.png" alt="room-1">
+                            <div class="content-wrap">
+                                <div class="inner-contact">
+                                    <h4>Moroccan Specials</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rooms-box-back">
+                            <img src="assets/img/rooms/Card-1-Moroccan-Specials.png" alt="rooms-1">
+                            <div class="content-wrap">
+                                <div class="box-overlay"></div>
+                                <div class="inner-back-side">
+                                    <div class="sub-inner-contact px-4">
+                                        <h5>Moroccan Specials</h5>
+                                        <p style="color: #14876f;">Classic tagines and couscous — hearty, spiced, and
+                                            authentically Moroccan.
+                                        </p>
+                                    </div>
+                                    <div class="header-button text-center m-4 ">
+                                        <a href="our-menu.html" class="rx-btn-one">Order Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 mb-24" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="rx-rooms-main-box">
+                        <div class="rooms-box-front">
+                            <img src="assets/img/rooms/Card-2-dessert.png" alt="room-1">
+                            <div class="content-wrap">
+                                <div class="inner-contact">
+                                    <h4>Desserts</h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rooms-box-back">
+                            <img src="assets/img/rooms/Card-2-dessert.png" alt="rooms-1">
+                            <div class="content-wrap">
+                                <div class="box-overlay"></div>
+                                <div class="inner-back-side">
+                                    <div class="sub-inner-contact px-4">
+                                        <h5>Desserts</h5>
+                                        <p style="color: #14876f;">Baklava, kunafa, and croissants — sweet, nutty, and
+                                            best enjoyed with mint
+                                            tea.</p>
+                                    </div>
+                                    <div class="header-button text-center m-4 ">
+                                        <a href="our-menu.html" class="rx-btn-one">Order Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-none d-lg-block col-lg-2"></div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Discover Morocco-->
+    <section class="section-amenities padding-tb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="col-12" data-aos="fade-up" data-aos-duration="1000">
+                        <div class="rx-banner text-center rx-banner-effects">
+                            <p><img src="assets/img/banner/left-shape.svg" alt="banner-left-shape"
+                                    class="svg-img left-side">Fun Facts<img src="assets/img/banner/right-shape.svg"
+                                    alt="banner-right-shape" class="svg-img right-side"></p>
+                            <h4><span>Discover Morocco</span></h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <div class="owl-carousel rx-amenities-slider">
+                        <div class="row mb-minus-24">
+                            <div class="col-lg-8 col-12 mb-24 pb-2">
+                                <div class="rx-amenities-img">
+                                    <img src="assets/img/amenities/history-1.png" alt="amenities-1">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-12 mb-24">
+                                <div class="rx-amenities-contact amenities-animation">
+                                    <div class="inner-banner">
+                                        <h4>The Blue City</h4>
+                                    </div>
+                                    <p>In Morocco’s Rif Mountains lies Chefchaouen — a dreamy town painted in
+                                        endless shades of blue. The color
+                                        symbolizes peace, spirituality, and the boundless sky.</p>
+                                    <div class="booking-now">
+                                        <div class="header-button">
+                                            <a href="history.html"
+                                                style="background-color: #14876f; color: #fff; border: none;"
+                                                class="rx-btn-one">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-minus-24">
+                            <div class="col-lg-8 col-12 mb-24">
+                                <div class="rx-amenities-img">
+                                    <img src="assets/img/amenities/history-3.png" alt="amenities-2">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-12 mb-24 pb-2">
+                                <div class="rx-amenities-contact amenities-animation">
+                                    <div class="inner-banner">
+                                        <h4>First to Recognize U.S. Independence</h4>
+                                    </div>
+                                    <p>Morocco became the first nation to recognize the United States in 1777 —
+                                        beginning one of the world’s oldest friendships
+                                        built on respect and shared values.</p>
+                                    <div class="booking-now">
+                                        <div class="header-button">
+                                            <a href="history.html"
+                                                style="background-color: #14876f; color: #fff; border: none;"
+                                                class="rx-btn-one">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-minus-24">
+                            <div class="col-lg-8 col-12 mb-24">
+                                <div class="rx-amenities-img">
+                                    <img src="assets/img/amenities/history-2.png" alt="amenities-3">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-12 mb-24 pb-2">
+                                <div class="rx-amenities-contact amenities-animation">
+                                    <div class="inner-banner">
+                                        <h4>Oldest University <br>in Morocco</h4>
+                                    </div>
+                                    <p>Founded in 859 AD by Fatima al-Fihri in Fez, Al-Qarawiyyin is recognized as the
+                                        world’s oldest continuously operating
+                                        university — a beacon of knowledge and culture.</p>
+                                    <div class="booking-now">
+                                        <div class="header-button">
+                                            <a href="history.html"
+                                                style="background-color: #14876f; color: #fff; border: none;"
+                                                class="rx-btn-one">Learn More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Book -->
+
+    <section class="section-book padding-tb-100 bg-two-secondary">
+        <div class="container">
+            <div class="row">
+                <div class="col-12" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="rx-banner text-center rx-banner-effects">
+                        <p style="color: #fff;"><img src="assets/img/banner/left-shape.svg" alt="banner-left-shape"
+                                class="svg-img left-side" style="filter: brightness(0) invert(1)">Book Now<img
+                                src="assets/img/banner/right-shape.svg" alt="banner-right-shape"
+                                class="svg-img right-side" style="filter: brightness(0) invert(1)"></p>
+                        <h4 style="color: #fff;">Host Your Gathering at Mynt House</h4>
+                        <p class="mt-4 col-12 col-md-8 text-center mx-auto" style="color: #fff;">Whether it’s a
+                            birthday, book
+                            club, or
+                            small
+                            celebration, we’ll make it
+                            memorable with
+                            Moroccan décor, flavors, and
+                            warmth.
+                            Fill out the form below — we’ll reach out within 24 hours to plan your event.
+                        </p>
+                    </div>
+                </div>
+                <form class="rx-book-from"
+                    id="eventBookingForm"
+                    data-aos="fade-up"
+                    data-aos-duration="1000"
+                    data-aos-delay="200">
+
+                    <div class="row mb-minus-24">
+
+                        <!-- Name -->
+                        <div class="col-lg-3 col-sm-6 col-12 mb-24">
+                            <div class="rx-input-box">
+                                <label for="name" style="color: #fff;">Name *</label>
+                                <input type="text" id="name" class="rx-from-control" required>
+                            </div>
+                        </div>
+
+                        <!-- Phone -->
+                        <div class="col-lg-3 col-sm-6 col-12 mb-24">
+                            <div class="rx-input-box">
+                                <label for="phone" style="color: #fff;">Phone *</label>
+                                <input type="tel" id="phone" class="rx-from-control" required>
+                            </div>
+                        </div>
+
+                        <!-- Guests -->
+                        <div class="col-lg-3 col-sm-6 col-12 mb-24">
+                            <div class="rx-input-box">
+                                <label for="guests" style="color: #fff;">Guests</label>
+                                <input type="number" id="guests" class="rx-from-control" min="1">
+                            </div>
+                        </div>
+
+                        <!-- Date -->
+                        <div class="col-lg-3 col-sm-6 col-12 mb-24">
+                            <div class="rx-input-box">
+                                <label for="date" style="color: #fff;">Date *</label>
+                                <input type="text" id="date" class="rx-from-control datepicker" required>
+                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="col-12 mb-24">
+                            <div class="rx-input-box">
+                                <label for="message" style="color: #fff;">Message (optional)</label>
+                                <textarea id="message" class="rx-from-control" rows="3"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="col-12 text-center">
+                            <button type="submit"
+                                    id="submitBtn"
+                                    class="rx-btn-one"
+                                    style="background-color:#14876f;color:#fff;border:none;">
+                                Book Now
+                            </button>
+                        </div>
+
+                        <!-- Success Message -->
+                        <div class="col-12 text-center mt-3">
+                            <p id="formSuccess"
+                            style="display:none;color:#a8ffdf;font-weight:500;">
+                                ✅ Thank you! Your booking request has been sent successfully.
+                            </p>
+                        </div>
+
+                    </div>
+                </form>
+
+
+                <!-- <div class="col-12" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                    <div class="rx-booking-last-contact">
+                        <div class="booking-now">
+                            <div class="header-button">
+                                <a href="https://www.toasttab.com/local/order/mynt-house-118-s-main-street"
+                                    style="background-color: #14876f; color: #fff; border: none;"
+                                    class="rx-btn-one">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="rx-main-footer padding-tb-100" style="background-color: #f5f5f5;">
+            <div class="container">
+                <div class="row mb-minus-24">
+                    <div class="col-lg-3 col-sm-6 col-12 mb-24 footer-order-1">
+                        <div class="rx-social-media">
+                            <div class="rx-logo">
+                                <img src="assets/img/logo/mynt-house-logo.svg" alt="logo">
+                            </div>
+                            <div class="inner-contact">
+                                <p style="color: #477e8d;">Experience the spirit of Morocco at Mynt House Café — where
+                                    authentic flavors, rich traditions, and warm ambiance come
+                                    together for a true cultural escape.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-6  mb-24 footer-order-2">
+                        <div class="rx-footer-items">
+                            <div class="rx-items-heading">
+                                <h4>Explore</h4>
+                            </div>
+                            <div class="rx-items-contact">
+                                <ul>
+                                    <li>
+                                        <a href="index.html"
+                                            style="font-weight: 500; font-size: 16px; font-family: 'Playfair Display', serif;">Home</a>
+                                    </li>
+                                    <li>
+                                        <a href="our-story.html"
+                                            style="font-weight: 500; font-size: 16px; font-family: 'Playfair Display', serif;">About</a>
+                                    </li>
+                                    <li>
+                                        <a href="our-menu.html"
+                                            style="font-weight: 500; font-size: 16px; font-family: 'Playfair Display', serif;">Menu</a>
+                                    </li>
+                                    <li>
+                                        <a href="history.html"
+                                            style="font-weight: 500; font-size: 16px; font-family: 'Playfair Display', serif;">Discover
+                                            Morocco</a>
+                                    <li>
+                                        <a target="_blank"
+                                            href="https://www.toasttab.com/local/order/mynt-house-118-s-main-street"
+                                            style="font-weight: 500; font-size: 16px; font-family: 'Playfair Display', serif;">Order
+                                            Now</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-6 mb-24 footer-order-4">
+                        <div class="rx-footer-items">
+                            <div class="rx-items-heading">
+                                <h4>Contact Us</h4>
+                            </div>
+                            <div class="rx-items-contact">
+                                <div class="rx-footer-other-info">
+                                    <div class="inner-info">
+                                        <h5>Address</h5>
+                                        <a href="https://maps.app.goo.gl/rxWUAACWwGGz4V2M9" target="_blank">118 S Main
+                                            St
+                                            Ann Arbor, MI 48104
+                                            United States</a>
+                                    </div>
+                                    <div class="inner-info">
+                                        <h5>Email</h5>
+                                        <a href="mailto:info@mynthouse.com">info@mynthouse.com</a>
+                                    </div>
+                                    <div class="inner-info">
+                                        <h5>Phone No</h5>
+                                        <a href="tel:7344923987">734-492-3987</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-sm-6 col-12 mb-24 mt-4 mt-lg-0 footer-order-5">
+                        <div class="rx-footer-map">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2951.9330726620767!2d-83.74904482347365!3d42.279770043990384!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x883cae3d25bac969%3A0x64148842f82a6ece!2s118%20S%20Main%20St%2C%20Ann%20Arbor%2C%20MI%2048104%2C%20USA!5e0!3m2!1sen!2slk!4v1694520517644!5e0!3m2!1sen!2slk!4v1694520517644"
+                                style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="rx-footer-copy" style="background-color: #00528f;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="rx-footer-inner-contact  align-items-center">
+                            <div class="rx-footer-left-side-contact">
+                                <p style="color: #fff;">&copy; 2025 <a href="index.html" style="color: #fff;">Mynt House
+                                        Cafe</a>, All Rights Reserved.</p>
+                            </div>
+                            <!-- <div class="col-12 col-md-4 mb-3 mb-md-0 text-center">
+                                <img src="assets/img/banner/freshwork.png" width="70%" alt="freshwork">
+                            </div> -->
+                            <div class="rx-footer-last-logo">
+                                <div class="rx-inner-footer-logo">
+                                    <a href="https://web.facebook.com/profile.php?id=61569794795201"><i
+                                            class="ri-facebook-line" style="color: #fff;"></i></a>
+                                </div>
+                                <div class="rx-inner-footer-logo">
+                                    <a href="https://www.instagram.com/mynthousecafe/?hl=en"><i
+                                            class="ri-instagram-line" style="color: #fff;"></i></a>
+                                </div>
+                                <div class="rx-inner-footer-logo">
+                                    <a href="#"><i class="ri-linkedin-line" style="color: #fff;"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="rx-footer-bottom" style="background-color: #f5f5f5;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="rx-footer-inner-contact  align-items-center justify-content-center">
+                            <div class="row ">
+                                <div class="col-12 d-flex text-center align-items-center">
+                                    <img src="assets/img/logo/fw-logo.svg" width="30" alt="freshwork">
+                                    <p style="color: #477e8d; font-size: 14px;">Designed by <a
+                                            href="http://freshworkfactory.com"
+                                            style="color: #00528f; font-weight: 600; font-size: 14px; font-family: BebasNeue;"
+                                            target="_blank">freshworkfactory.com</a>
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </footer>
+
+    <!-- Back to top  -->
+    <a href="#Top" class="back-to-top result-placeholder">
+        <i class="ri-arrow-up-double-fill"></i>
+        <div class="back-to-top-wrap active-progress">
+            <svg viewBox="-1 -1 102 102">
+                <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+            </svg>
+        </div>
+    </a>
+
+    <!-- Modal -->
+    <div class="rx-modal modal fade" id="rx_booking_from">
+        <div class="rx-modal-dialog modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="sub-title">
+                    <h4>Book Your Private Event</h4>
+                </div>
+                <button type="button" class="qty-close" data-bs-dismiss="modal" aria-label="Close">
+                    <i class="ri-close-line"></i>
+                </button>
+                <div class="modal-body">
+                    <div class="rx-booking-from">
+                        <form action="#">
+                            <div class="rx-inner-input">
+                                <label for="fnameone">Name*</label>
+                                <input type="text" id="fnameone" class="rx-from-control">
+                            </div>
+                            <div class="rx-inner-input">
+                                <label for="Phoneone">Phone No*</label>
+                                <input type="text" id="Phoneone" class="rx-from-control">
+                            </div>
+                            <div class="rx-inner-input">
+                                <label for="gustone">No. Of Gust*</label>
+                                <input type="text" id="gustone" class="rx-from-control">
+                            </div>
+                            <div class="rx-inner-input">
+                                <label for="dateone">Date & Time*</label>
+                                <input type="text" id="dateone" class="rx-from-control datepicker">
+                            </div>
+                            <div class="rx-inner-button">
+                                <a href="javascript:void(0)" class="rx-btn-two">Serch Room</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Plugins -->
+    <script src="assets/js/vendor/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/vendor/jquery-ui.min.js"></script>
+    <script src="assets/js/vendor/aos.js"></script>
+    <script src="assets/js/vendor/smoothscroll.min.js"></script>
+    <script src="assets/js/vendor/jquery.fancybox.min.js"></script>
+    <script src="assets/js/vendor/slick.min.js"></script>
+    <script src="assets/js/vendor/owl.carousel.min.js"></script>
+    <script src="assets/js/vendor/swiper-bundle.min.js"></script>
+
+    <!-- main-js -->
+    <!-- EmailJS SDK (client-side sending) - replace with your project setup -->
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,176 @@
+/* Rooms */
+.rx-rooms-box {
+    @include ease3;
+    position: relative;
+    overflow: hidden;
+    border-radius: $radius-20;
+    .rx-rooms-img {
+        @include ease3;
+        position: relative;
+        z-index: 1;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        perspective: inherit;
+        transition: transform 0.8s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+        transition: transform 0.8s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+        transform: rotateY(0deg);
+        background-color: transparent;
+        border-radius: $radius-20;
+        overflow: hidden;
+        img {
+            @include ease3;
+            width: 100%;
+        }
+        .inner-contact {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px 0;
+            text-align: center;
+            background-color: $black-04;
+            h4 {
+                font-size: 16px;
+                font-weight: 600;
+                color: $text-fff;
+            }
+        }
+    }
+    .rx-rooms-back-side {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        perspective: inherit;
+        transition: transform 0.8s cubic-bezier(0.5, 1.3, 0.5, 1.3);
+        transform: rotateY(-180deg);
+        border-radius: $radius-20;
+        overflow: hidden;
+        &:after{
+            content: "";
+            background-color: rgba(245, 245, 245, .9);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            height: 100%;
+            width: 100%;
+        }
+        img{
+            position: absolute;
+            height: calc(100% - 60px);
+            width: calc(100% - 60px);
+            margin: 30px;
+            padding: 0;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            border-radius: $radius-20;
+        }
+        .inner-back-side {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;    
+            overflow: hidden;
+            height: calc(100% - 60px);
+            width: calc(100% - 60px);
+            margin: 30px;
+            border: 1px solid $secondary;
+            border-radius: $radius-20;
+            .rx-price {
+                display: flex;
+                justify-content: center;
+                span {
+                    padding: 8px 18px;
+                    background-color: $secondary;
+                    line-height: 20px;
+                    font-size: 15px;
+                    color: $text-fff;
+                }
+            }
+            .sub-inner-contact {
+                height: calc(100% - 75px);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                h5 {
+                    margin-bottom: 12px;
+                    font-size: 22px;
+                    line-height: 1.2;
+                    color: $title-color;
+                }
+                ul {
+                    li {
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: $text-color;
+                    }
+                }
+            }
+            .last-contact {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                .inner-button {
+                    background-color: $secondary;
+                    color: $text-fff;
+                    padding: 6px 14px;
+                    font-size: 14px;
+                    i {
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+    &:hover {
+        .rx-rooms-img {
+            z-index: 0;
+            transform: rotateY(180deg);
+            img{
+                padding: 30px;
+            }
+            .inner-contact{
+                display: none;
+            }
+        }
+        .rx-rooms-back-side {
+            transform: rotateY(0);
+        }
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 767px) {
+    .rx-rooms-box {
+        .rx-rooms-back-side {
+            img{
+                height: calc(100% - 30px);
+                width: calc(100% - 30px);
+                margin: 15px;        
+            }
+            .inner-back-side {
+                height: calc(100% - 30px);
+                width: calc(100% - 30px);
+                margin: 15px;
+                .sub-inner-contact {
+                    h5 {
+                        margin-bottom: 8px;
+                        font-size: 18px;
+                    }
+                    ul {
+                        li {
+                            font-size: 13px;
+                            line-height: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,23 @@
+/* about-2 */
+.rx-about-contact{
+    .items-details{
+        h5{
+            margin-bottom: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            color: $title-color;
+        }
+        p{
+            margin-bottom: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            color: $text-color;
+        }
+        .rx-dark-img {
+            display: none;
+        }
+        img{
+            width: 100px;
+        }
+    }
+}

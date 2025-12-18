@@ -1,0 +1,215 @@
+/* about */
+.rx-about-img {
+    position: relative;
+    img {
+        width: 100%;
+    }
+    .rx-rounded-circle {
+        z-index: 1;
+        height: 100px;
+        width: 100px;
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        background-color: $black-08;
+        border-radius: 50%;
+    }
+}
+
+.rx-about-contact {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .inner-contact {
+        p {
+            margin-bottom: 16px;
+            font-size: 14px;
+            font-weight: 400;
+            color: $text-color;
+        }
+        .rx-about-inner-box {
+            margin-top: 30px;
+            .rx-about-box {
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: $bg-two-secondary;
+                border: 1px solid $border-eee;
+                border-radius: $radius-20;
+                h5 {
+                    margin-bottom: 12px;
+                    font-family: $text-font-family;
+                    font-size: 23px;
+                    color: $title-color;
+                    font-weight: 600;
+                    line-height: 0.65;
+                }
+                p {
+                    margin-bottom: 0;
+                    font-family: $text-font-family;
+                    font-size: 14px;
+                    color: $text-color;
+                    letter-spacing: 2px;
+                    line-height: 1.2;
+                }
+            }
+        }
+    }
+}
+
+.rx-rounded-circle {
+    @keyframes rotateText {
+        0% {
+            transform: rotate(360deg);
+        }
+        100% {
+            transform: rotate(0deg);
+        }
+    }
+    &:hover {
+        svg, img {
+            animation: rotateText 10s linear infinite;
+        }
+    }
+    a {
+        position: relative;
+    }
+    .inner-contact {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+            font-size: 24px;
+            color: $text-fff;
+        }
+    }
+    svg, img {
+        fill: currentColor;
+        height: auto;
+        transform-origin: center;
+        width: 100%;
+        text {
+            textPath {
+                font-size: 12px;
+                color: $text-fff;
+                letter-spacing: 1.5px;
+            }
+        }
+    }
+    h5 {
+        font-size: 10px;
+        color: $text-fff;
+    }
+}
+
+.rx-about-page-contact{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .inner-about-contact{
+        p{
+            margin-bottom: 16px;
+        }
+    }
+    .items-details{
+        h5{
+            margin-bottom: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            color: $title-color;
+        }
+        p{
+            margin-bottom: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            color: $text-color;
+        }
+        .rx-dark-img {
+            display: none;
+        }
+        img{
+            width: 100px;
+        }
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 1399px) {
+    .rx-about-img {
+        .rx-rounded-circle{
+            top: 15px;
+            right: 15px;
+        }
+    }
+    .rx-about-contact {
+        .inner-contact {
+            .rx-about-inner-box {
+                .rx-about-box {
+                    h5 {
+                        font-size: 32px;
+                    }
+                    p {
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .rx-about-contact {
+        .inner-contact {
+            p{
+                font-size: 15px;
+            }
+            .rx-about-inner-box {
+                margin-top: 20px;
+                .rx-about-box {
+                    h5 {
+                        margin-bottom: 8px;
+                        font-size: 28px;
+                    }
+                    p {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .rx-about-inner-box{
+        .row{
+            justify-content: center;
+        }
+        .mt-24{
+            margin-top: 0;
+        }
+    }
+    .rx-about-img {
+        .rx-rounded-circle {
+            top: 0;
+            right: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .rx-about-img {
+        .rx-rounded-circle{
+            height: 80px;
+            width: 80px;
+        }
+    }
+}
+

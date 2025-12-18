@@ -1,0 +1,198 @@
+/* Extra services */
+.extra-services-img {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    img {
+        width: 100%;
+        border-radius: 200px;
+    }
+}
+
+.extra-services-contact {
+    @include ease05;
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid $border-eee;
+    border-bottom: 2px solid $border-eee;
+    .extra-services-absolute-contact {
+        @include ease3;
+        z-index: -1;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        p {
+            font-family: $text-font-family;
+            font-size: 120px;
+            line-height: 85px;
+            color: $dark-off;
+            font-weight: bold;
+        }
+    }
+    .rx-services-price {
+        width: 33.33%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        h2 {
+            @include ease3;
+            margin-bottom: 12px;
+            font-size: 57px;
+            color: $primary;
+            font-weight: 700;
+            line-height: 1;
+            opacity: .2;
+            span {
+                font-family: $text-font-family;
+                font-size: 15px;
+                font-weight: 600;
+                color: $secondary;
+            }
+        }
+        p {
+            font-size: 20px;
+            font-weight: 500;
+            color: $text-000;
+        }
+    }
+    .rx-services-inner-contact {
+        width: 33.33%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        ul {
+            margin-bottom: -6px;
+            li {
+                margin-bottom: 6px;
+                font-size: 13px;
+                line-height: 22px;
+                font-weight: 400;
+                color: $text-color;
+            }
+        }
+    }
+    .rx-services-ico {
+        width: 33.33%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        .ico {
+            @include ease3;
+            height: 40px;
+            width: 40px;
+            background-color: $bg-fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid $border-eee;
+            border-radius: 50%;
+            &:hover{
+                background-color: $primary;
+                i{
+                    color: $text-fff;
+                }
+            }
+            i {
+                font-size: 18px;
+            }
+        }
+    }
+    &:hover {
+        border-color: $border-000;
+        .extra-services-absolute-contact {
+            opacity: 0;
+        }
+        .rx-services-ico {
+            .ico {
+                transform: rotate(45deg);
+            }
+        }
+        .rx-services-price {
+            h2 {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 1399px) {
+    .extra-services-contact {
+        .rx-services-price {
+            width: 30%;
+        }
+        .rx-services-inner-contact {
+            width: 40%;
+        }
+        .rx-services-ico {
+            width: 30%;
+        }
+        .extra-services-absolute-contact {
+            p {
+                font-size: 85px;
+                line-height: 58px;
+            }
+        }
+    }
+}
+@media screen and (max-width: 1199px) {
+    .extra-services-contact {
+        .extra-services-absolute-contact {
+            p {
+                font-size: 70px;
+                line-height: 48px;
+            }
+        }
+        .rx-services-price {
+            width: 30%;
+        }
+        .rx-services-inner-contact {
+            width: 50%;
+        }
+        .rx-services-ico {
+            width: 20%;
+        }
+        .rx-services-price {
+            h2 {
+                font-size: 38px;
+            }
+            p {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .extra-services-contact {
+        padding: 20px 0;
+        .rx-services-price {
+            width: 80%;
+        }
+        .rx-services-inner-contact {
+            width: 0%;
+        }
+        .rx-services-ico {
+            width: 20%;
+        }
+        .rx-services-inner-contact {
+            display: none;
+        }
+    }
+}
+@media screen and (max-width: 767px) {
+    .extra-services-contact {
+        .extra-services-absolute-contact {
+            p {
+                font-size: 50px;
+                line-height: 33px;
+            }
+        }
+    }
+}

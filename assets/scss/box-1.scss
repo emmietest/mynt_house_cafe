@@ -1,0 +1,417 @@
+/* Box -1 */
+$radius-0: 0;
+
+.rx-mobile-menu {
+    .rx-menu-inner {
+        .rx-menu-contact {
+            ul {
+                li {
+                    a {
+                        border-radius: $radius-0;
+                    }
+                }
+            }
+        }
+        .header-res-social {
+            ul {
+                li {
+                    border-radius: $radius-0;
+                }
+            }
+        }
+    }
+}
+.section-hero {
+    .rx-hero-contact {
+        .inner-contact {
+            border-radius: $radius-0;
+            .booking-now {
+                .ico {
+                    border-radius: $radius-0;
+                }
+            }
+        }
+    }
+}
+
+.rx-menu-tabs {
+    ul.nav-tabs {
+        li {
+            button {
+                border-radius: $radius-0;
+            }
+        }
+    }
+}
+
+.rx-about-contact {
+    .inner-contact {
+        .rx-about-inner-box {
+            .rx-about-box {
+                border-radius: $radius-0;
+            }
+        }
+    }
+}
+
+.rx-modal {
+    .modal-content {
+        border-radius: $radius-0;
+    }
+}
+
+.rx-tools-sidebar {
+    .rx-tools-sidebar-toggle {
+        border-radius: $radius-0;
+    }
+}
+
+.next-slick-img,
+.prev-slick-img {
+    border-radius: $radius-0;
+    img {
+        border-radius: $radius-0;
+    }
+}
+
+.rx-amenities-img {
+    img {
+        border-radius: $radius-0;
+    }
+}
+
+.extra-services-img {
+    img {
+        border-radius: $radius-0;
+    }
+}
+
+.extra-services-contact {
+    .rx-services-ico {
+        .ico {
+            border-radius: $radius-0;
+        }
+    }
+}
+
+.rx-services {
+    border-radius: $radius-0;
+}
+
+.rx-testimonials-img {
+    img {
+        border-radius: $radius-0;
+    }
+}
+
+.rx-testimonials-contact {
+    .inner-contact {
+        border-radius: $radius-0;
+    }
+}
+
+.rx-inner-menu-desk {
+    .navbar-toggler {
+        border-radius: $radius-0;
+    }
+    .rx-main-menu {
+        ul {
+            .rx-dropdown {
+                .rx-dropdown-menu {
+                    border-radius: $radius-0;
+                }
+            }
+        }
+    }
+}
+.rx-blog-card {
+    .rx-blog-img {
+        border-radius: $radius-0;
+        img {
+            border-radius: $radius-0;
+        }
+    }
+    &:hover {
+        .rx-blog-img {
+            img {
+                border-radius: $radius-0;
+            }
+        }
+    }
+    .rx-blog-contact {
+        border-radius: $radius-0;
+    }
+}
+
+.rx-side-menu-image {
+    .radius-one {
+        img {
+            border-radius: $radius-0;
+        }
+    }
+    .radius-two {
+        img {
+            border-radius: $radius-0;
+        }
+    }
+    .radius-three {
+        img {
+            border-radius: $radius-0;
+        }
+    }
+    .radius-four {
+        img {
+            border-radius: $radius-0;
+        }
+    }
+}
+
+.rx-team-card {
+    .rx-team-img {
+        border-radius: $radius-0;
+        .rx-team-social-media {
+            .social-media-item {
+                border-radius: $radius-0;
+            }
+        }
+    }
+}
+
+.rx-book-from {
+    .rx-input-box {
+        .rx-from-control {
+            border-radius: $radius-0;
+        }
+    }
+}
+
+.rx-gallery-card {
+    .rx-gallery-img {
+        img {
+            border-radius: $radius-0;
+        }
+        &:after {
+            border-radius: $radius-0;
+        }
+    }
+}
+
+.rx-gallery-card-two {
+    .rx-gallery-img {
+        img {
+            border-radius: $radius-0;
+        }
+        &:after {
+            border-radius: $radius-0;
+        }
+    }
+}
+
+.rx-rooms-main-box {
+    .rooms-box-front {
+        border-radius: $radius-0;
+        img {
+            border-radius: $radius-0;
+        }
+        .content-wrap {
+            .inner-contact {
+                border-radius: $radius-0 !important;
+            }
+        }
+    }
+    .rooms-box-back {
+        border-radius: $radius-0;
+        img{
+            border-radius: $radius-0;
+        }
+        .content-wrap {
+            .box-overlay{
+                border-radius: $radius-0;
+            }
+            .inner-back-side {
+                border-radius: $radius-0;
+            }
+        }
+    }
+}
+
+.rx-rooms-box {
+    border-radius: $radius-0;
+    .rx-rooms-img {
+        border-radius: $radius-0;
+    }
+    .rx-rooms-back-side {        
+        border-radius: $radius-0;
+        img {
+            border-radius: $radius-0;
+        }
+        .inner-back-side {
+            border-radius: $radius-0;
+        }
+    }
+}
+
+.rx-btn-one {
+    border-radius: $radius-0;
+}
+
+.rx-btn-two {
+    border-radius: $radius-0;
+}
+
+.rx-social-media {
+    .rx-social-logo {
+        .inner-logo {
+            img {
+                border-radius: $radius-0;
+            }
+        }
+    }
+}
+
+.rx-footer-inner-contact {
+    .rx-footer-last-logo {
+        .rx-inner-footer-logo {
+            border-radius: $radius-0;
+        }
+    }
+}
+
+.rx-rooms-box-2 {
+    border-radius: $radius-0;
+    img {
+        border-radius: $radius-0;
+    }
+}
+
+input,
+textarea,
+.rx-from-control {
+    border-radius: $radius-0;
+}
+
+.rx-room-details-sidebar {
+    border-radius: $radius-0;
+    .inner-room-details {
+        .rx-side-from {
+            .form-check {
+                input {
+                    border-radius: $radius-0;
+                }
+            }
+        }
+    }
+}
+
+.rx-room-details-main-contact {
+    .rx-main-room {
+        border-radius: $radius-0;
+        .rx-room-details-image {
+            img {
+                border-radius: $radius-0;
+            }
+        }
+        .rx-room-details-inner {
+            img {
+                border-radius: $radius-0;
+            }
+        }
+    }
+    .rx-inner-details {
+        border-radius: $radius-0;
+    }
+}
+
+.rx-contact-form {
+    border-radius: $radius-0;
+    .rx-contact-touch-ifrem {
+        iframe {
+            border-radius: $radius-0;
+        }
+    }
+}
+
+.rx-faq {
+    .accordion {
+        .accordion-item {
+            border-radius: $radius-0;
+            .accordion-button {
+                border-radius: $radius-0;
+            }
+        }
+    }
+}
+
+.rx-spa-card {
+    border-radius: $radius-0;
+    .spa-img {
+        border-radius: $radius-0;
+        img {
+            border-radius: $radius-0;
+        }
+    }
+}
+
+.rx-spa-services {
+    border-radius: $radius-0;
+    .border-tl-radius {
+        img {
+            border-radius: $radius-0;
+        }
+    }
+    .border-br-radius {
+        img {
+            border-radius: $radius-0;
+        }
+    }
+}
+
+.rx-checkout {
+    .rx-checkout-wrap {
+        border-radius: $radius-0;
+    }
+}
+.rx-blog-details-sidebar {
+    border-radius: $radius-0;
+    .rx-recent-post {
+        .recent-inner-post {
+            .recent-post-cart {
+                .post-img {
+                    img {
+                        border-radius: $radius-0;
+                    }
+                }
+            }
+        }
+    }
+    .rx-popular-tags {
+        .popular-inner-tags {
+            ul {
+                li {
+                    a {
+                        border-radius: $radius-0;
+                    }
+                }
+            }
+        }
+    }
+}
+.rx-blog-details {
+    .rx-blog-details-cart {
+        .blog-details-contact {
+            .pagination {
+                ul {
+                    border-radius: $radius-0;
+                }
+            }
+            img {
+                border-radius: $radius-0;
+            }
+        }
+        .blog-details-img {
+            img {
+                border-radius: $radius-0;
+            }
+        }
+    }
+}

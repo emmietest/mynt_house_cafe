@@ -1,0 +1,66 @@
+/* Team */
+.rx-team-card {
+    .rx-team-img {
+        overflow: hidden;
+        position: relative;
+        margin-bottom: 20px;
+        border-top-left-radius: 500px;
+        border-top-right-radius: 500px;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+        img {
+            width: 100%;
+        }
+        .rx-team-social-media {
+            @include ease3;
+            position: absolute;
+            bottom: -50px;
+            left: 0;
+            right: 0;
+            background-color: $black-08;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            .social-media-item {
+                @include ease3;
+                height: 30px;
+                width: 30px;
+                margin: 0 5px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border: 1px solid $border-bbb;
+                border-radius: $radius-5;
+                i {
+                    @include ease3;
+                    font-size: 15px;
+                    color: $text-bbb;
+                }
+                &:hover {
+                    border-color: $primary;
+                    i {
+                        color: $primary;
+                    }
+                }
+            }
+        }
+        &:hover {
+            .rx-team-social-media {
+                bottom: 0;
+            }
+        }
+    }
+    .rx-team-contact {
+        text-align: center;
+        h5 {
+            font-size: 18px;
+            font-weight: 600;
+            color: $title-color;
+        }
+        p {
+            font-size: 14px;
+            font-weight: 500;
+            color: $text-color;
+        }
+    }
+}

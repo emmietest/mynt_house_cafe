@@ -1,0 +1,92 @@
+/* services */
+.rx-services {
+    @include ease3;
+    background-color: $bg-two-secondary;
+    padding: 30px;
+    border: 1px solid $border-eee;
+    border-radius: $radius-20;
+    &:hover {
+        border: 1px solid $secondary;
+        .services-ico {
+            svg, img {
+                animation-name: wobble;
+                -webkit-animation-duration: 1s;
+                -webkit-animation-iteration-count: 1s;
+                -webkit-animation-timing-function: linear;
+                -webkit-transform-origin: 50% 100%;
+            }
+        }
+    }
+    .services-ico {
+        margin-bottom: 20px;
+        svg, img {
+            height: 50px;
+            width: 50px;
+            path {
+                stroke: $primary;
+                fill: $primary;
+            }
+        }
+    }
+    .services-contact {
+        h5 {
+            margin-bottom: 12px;
+            font-size: 20px;
+            color: $title-color;
+            line-height: 1.2;
+        }
+        ul {
+            li {
+                font-family: $text-font-family;
+                font-size: 14px;
+                color: $text-color;
+            }
+        }
+    }
+}
+
+@keyframes wobble {
+    0% {
+        Transform: none;
+    }
+    15% {
+        Transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+    }
+    30% {
+        Transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+    }
+    45% {
+        Transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+    }
+    60% {
+        Transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+    }
+    75% {
+        Transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+    }
+    100% {
+        Transform: none;
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 767px) {
+    .rx-services {
+        .services-contact {
+            h5 {
+                font-size: 18px;
+            }
+            ul {
+                li {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .rx-services {
+        padding: 20px;
+    }
+}

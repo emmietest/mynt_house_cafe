@@ -1,0 +1,56 @@
+/* Login */
+.rx-login-form {
+    .rx-inner-form {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+}
+.rx-login-img {
+    img {
+        width: 100%;
+    }
+}
+
+.rx-input-box {
+    position: relative;
+    label {
+        font-size: 12px;
+    }
+    i {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        cursor: pointer;
+    }
+}
+.rx-inline-block {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    a {
+        @include ease3;
+        margin-bottom: 15px;
+        display: flex;
+        opacity: .7;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+.rx-inner-button {
+    display: flex;
+    justify-content: space-between;
+    a {
+        @include ease3;
+        display: flex;
+        align-items: center;
+        opacity: .7;
+        i {
+            font-size: 20px;
+        }
+        &:hover {
+            opacity: 1;
+        }
+    }
+}

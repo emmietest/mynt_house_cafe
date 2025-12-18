@@ -1,0 +1,114 @@
+/* Room 2 */
+.rx-rooms-box-2 {
+    position: relative;
+    overflow: hidden;
+    border-radius: $radius-20;
+
+    &:hover {
+        .inner-back-side {
+            bottom: 0;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+        }
+
+        img {
+            transform: scale(1.2);
+        }
+    }
+
+    img {
+        @include ease3;
+        width: 100%;
+        border-radius: $radius-20;
+    }
+
+    .inner-back-side {
+        @include ease3;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: calc(-100% - -68px);
+        height: 100%;
+        width: 100%;
+        padding: 20px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-direction: column;
+        background-color: $black-08;
+
+        .sub-title {
+            width: 100%;
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h5 {
+                margin-bottom: 8px;
+                font-size: 20px;
+                font-weight: 600;
+                color: $text-fff;
+            }
+
+            .rx-price {
+                font-size: 16px;
+                font-weight: 500;
+                color: $text-fff;
+            }
+        }
+
+        .inner-info {
+            margin-bottom: 30px;
+
+            ul {
+                li {
+                    margin-bottom: 12px;
+                    font-size: 15px;
+                    font-weight: 500;
+                    line-height: 20px;
+                    color: $text-bbb;
+                }
+            }
+        }
+
+        .rx-button {
+            display: flex;
+
+            a {
+                padding: 4px 12px;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 1199px) {
+    .rx-rooms-box-2 {
+        .inner-back-side {
+            .sub-title {
+                margin-bottom: 15px;
+
+                h5 {
+                    font-size: 18px;
+                }
+
+                .rx-price {
+                    font-size: 14px;
+                }
+            }
+
+            .inner-info {
+                margin-bottom: 15px;
+
+                ul {
+                    li {
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}

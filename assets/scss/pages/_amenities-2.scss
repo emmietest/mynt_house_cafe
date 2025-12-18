@@ -1,0 +1,17 @@
+/* Amenities */
+.rx-amenities-contact {
+    .inner-banner {
+        left: -200px;
+        width: calc(100% + 200px);
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 991px) {
+    .rx-amenities-contact {
+        .inner-banner{
+            left: 0;
+            width: 100%;
+        }
+    }
+}

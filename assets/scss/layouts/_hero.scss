@@ -1,0 +1,379 @@
+/*  Hero */
+.swiper-pagination-horizontal.swiper-pagination-bullets {
+    .swiper-pagination-bullet {
+        background-color: $primary;
+        width: 10px;
+        height: 10px;
+    }
+}
+
+.slick-slider {
+    margin-bottom: 0px;
+}
+
+.rx-slide {
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.85) 70%, rgba(0, 0, 0, 0.85) 100%);
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: 0;
+        bottom: 0;
+        width: 100%;
+        height: 400px;
+        background: linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+}
+
+.section-hero {
+    overflow: hidden;
+
+    button.slick-next {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        z-index: 2;
+    }
+
+    button.slick-prev {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        z-index: 2;
+    }
+
+    button.slick-prev,
+    button.slick-next {
+        border: 0;
+        background: none;
+        font-size: 0 !important;
+
+        .prev-slick-arrow,
+        .next-slick-arrow {
+            display: none !important;
+            font-size: 0 !important;
+        }
+    }
+}
+
+.prev-slick-img {
+    position: absolute;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    border: 2px solid #fff;
+    border-radius: 50%;
+    z-index: 5;
+
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+}
+
+.next-slick-img {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 2px solid #fff;
+    border-radius: 50%;
+
+    img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+}
+
+.rx-slider {
+    .rx-slide {
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    .slide-1 {
+        background-image: url("../img/hero/hero-image-1.png");
+    }
+
+    .slide-2 {
+        background-image: url("../img/hero/hero-image-2.png");
+    }
+
+    .slide-3 {
+        background-image: url("../img/hero/hero-image-3.png");
+    }
+}
+
+.rx-slide {
+    .banner-arrow-img {
+        display: none;
+    }
+}
+
+/*-----  Slider Style  -----*/
+.section-hero {
+    .rx-hero-contact {
+        padding: 50px 0;
+        position: relative;
+        z-index: 3;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+
+        .inner-contact {
+            max-width: 600px;
+
+            p {
+                margin-bottom: 8px;
+                font-size: 16px;
+                color: $text-fff;
+            }
+
+            h2 {
+                margin-bottom: 16px;
+                font-size: 45px;
+                line-height: 55px;
+                font-weight: 500;
+                color: $text-fff;
+
+                span {
+                    color: $primary;
+                }
+            }
+
+            .booking-now {
+                display: flex;
+
+                .ico {
+                    position: relative;
+                    height: 40px;
+                    width: 40px;
+                    margin-right: 15px;
+                    border-radius: $radius-10;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border: 1px solid $border-fff;
+
+                    i {
+                        font-size: 22px;
+                        color: $text-fff;
+                    }
+                }
+
+                .booking-text {
+                    text-align: left;
+
+                    p {
+                        margin-bottom: 0;
+                        font-size: 14px;
+                        font-weight: 300;
+                        line-height: 20px;
+                        color: $text-fff;
+                    }
+
+                    span {
+                        font-size: 16px;
+                        font-weight: 500;
+                        color: $text-fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .slider-animation {
+        >* {
+            animation-duration: 1s;
+            animation-fill-mode: both;
+            animation-name: fadeOutDown;
+        }
+    }
+
+    :root {
+        --transition: 0.75s cubic-bezier(0.255, 0.67, 0, 1.01);
+    }
+
+    .rx-slide {
+        overflow: hidden;
+        position: relative;
+        transition:
+            transform var(--transition),
+            box-shadow var(--transition);
+    }
+
+    .slick-active {
+        .slider-animation {
+            >* {
+                animation-name: fadeInUp;
+
+                &:nth-child(1) {
+                    animation-delay: 1s;
+                }
+
+                &:nth-child(2) {
+                    animation-delay: 1.5s;
+                }
+
+                &:nth-child(3) {
+                    animation-delay: 2s;
+                }
+            }
+        }
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 1199px) {
+    .section-hero {
+        .rx-hero-contact {
+            .inner-contact {
+                h2 {
+                    font-size: 40px;
+                    line-height: 46px;
+                }
+            }
+        }
+    }
+
+    .rx-slider {
+        .rx-slide {
+            height: 90vh;
+        }
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .rx-slider {
+        .rx-slide {
+            height: 80vh;
+        }
+    }
+
+    .section-hero {
+        .rx-hero-contact {
+            .inner-contact {
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center !important;
+
+                h2 {
+                    font-size: 36px;
+                    line-height: 42px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .rx-slider {
+        .rx-slide {
+            height: 70vh;
+        }
+    }
+
+    .section-hero {
+        .rx-hero-contact {
+            .inner-contact {
+                max-width: 100%;
+
+                h2 {
+                    font-size: 32px;
+                    line-height: 38px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .section-hero {
+        .rx-hero-contact {
+            .inner-contact {
+                h2 {
+                    font-size: 26px;
+                    line-height: 31px;
+                }
+
+                p {
+                    font-size: 14px;
+                    line-height: 22px;
+                }
+            }
+        }
+
+        .inner-contact {
+            p {
+                font-size: 15px;
+                margin-bottom: 4px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+        }
+    }
+
+    .rx-slider {
+        .rx-slide {
+            height: 60vh;
+        }
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .section-hero {
+        .rx-hero-contact {
+            .inner-contact {
+                h2 {
+                    font-size: 22px;
+                    line-height: 31px;
+                }
+
+                .booking-now {
+                    .booking-text {
+                        span {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .section-hero {
+        .rx-hero-contact {
+            .inner-contact {
+                h2 {
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+            }
+        }
+    }
+}

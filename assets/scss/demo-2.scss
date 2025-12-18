@@ -1,0 +1,60 @@
+/*---------------------------------------------------------------------------------
+    Included CSS INDEX
+-----------------------------------------------------------------------------------
+
+01. Typography
+
+02. Utilities
+    - mixing
+    - variables
+
+03. components
+    - header
+    - footer
+    - common
+    - modal
+
+04. Layouts
+    - hero
+    - hero-2
+    - menu
+    - testimonials
+    - Book
+
+05. pages
+    - about
+    - about-2
+    - amenities
+    - amenities-2
+    - team
+
+-----------------------------------------------------------------------------------*/
+
+/* Typography ( Import Typography ) */
+@import "base/_typography";
+
+/* Utilities ( Import Utilities ) */
+@import "utilities/_mixing";
+@import "utilities/_variables";
+
+/* components ( Import components ) */
+@import "components/_common";
+@import "components/_header";
+@import "components/_footer";
+@import "components/_modal";
+@import "components/_tools-sidebar";
+
+/* Layouts ( Import Layouts ) */
+@import "layouts/_hero";
+@import "layouts/_hero-2";
+@import "layouts/_menu";
+@import "layouts/_testimonials";
+@import "layouts/_Book";
+
+/* pages ( Import pages ) */
+@import "pages/_about";
+@import "pages/_about-2";
+@import "pages/_amenities";
+@import "pages/_amenities-2";
+@import "pages/_team";
+

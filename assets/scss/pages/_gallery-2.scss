@@ -1,0 +1,52 @@
+/* gallery */
+.rx-gallery-card-two {
+    position: relative;
+    overflow: hidden;
+    &:hover {
+        .rx-gallery-img {
+            &:before,
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+    .rx-gallery-img {
+        img {
+            width: 100%;
+            border-radius: 30px;
+        }
+        &:before {
+            @include ease3;
+            content: "\F0D1";
+            font-family: $remixico;
+            font-size: 42px;
+            font-weight: 500;
+            color: $text-fff;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+        }
+        &:after {
+            @include ease3;
+            content: "";
+            background-color: $black-04;
+            height: 100%;
+            width: 100%;
+            border-radius: 30px;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            opacity: 0;
+        }
+    }
+}

@@ -1,0 +1,43 @@
+/* Contact */
+.rx-contact-form {
+    background-color: $bg-two-secondary;
+    padding: 30px;
+    border: 1px solid $border-eee;
+    border-radius: $radius-30;
+    .rx-input-box {
+        label {
+            margin-bottom: 4px;
+            font-size: 14px;
+            font-weight: 500;
+            color: $title-color;
+        }
+        textarea{
+            height: 150px;
+        }
+    }
+    .rx-contact-touch-ifrem {
+        height: 100%;
+        iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: $radius-10;
+        }
+    }
+}
+
+/* Responsive */
+@media screen and (max-width: 991px) {
+    .rx-contact-form {
+        .rx-contact-touch-ifrem {
+            iframe{
+                height: 400px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .rx-contact-form{
+        padding: 20px;
+    }
+}
