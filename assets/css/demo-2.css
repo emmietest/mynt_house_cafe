@@ -4772,20 +4772,21 @@ footer {
     align-items: center;
     justify-content: center;
     gap: 20px;
+    color: #00528f;
 }
 
 .contact-title h2 {
     font-family: "Playfair Display", serif;
     font-size: 32px;
     font-weight: 500;
-    color: #c46a2c;
+    color: #00528f;
     margin: 0;
 }
 
 .contact-title .line {
     width: 80px;
     height: 1px;
-    background: #c46a2c;
+    background: #00528f;
 }
 
 /* Inputs */
@@ -4821,7 +4822,7 @@ footer {
 }
 
 .text-accent {
-    color: #c46a2c;
+    color: #00528f;
 }
 
 /* Map */
